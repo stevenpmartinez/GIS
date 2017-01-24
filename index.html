@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Create a Web Map</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
-    <script src="https://js.arcgis.com/3.19/"></script>
-    <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.19/dijit/themes/claro/claro.css">
-    <script>  require(["esri/map"], function(Map) { ... });</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.19/esri/css/esri.css">
+    <style>
+      html,body,#mapDiv,.map.container{
+        padding:0;
+        margin:0;
+        height:100%;
+      }
+    </style>
+    
+    <script>var dojoConfig = { parseOnLoad:true };</script>
+    <script src="https://js.arcgis.com/3.19compact/"></script>
+    <script>  var map;  require(["esri/map", "dojo/domReady!"], function(Map){  });</script>
   </head>
   <body>
-    <body class="claro">  <div id="map"></div></body>
+    <div id="mapDiv"></div>
   </body>
 </html>
