@@ -5,6 +5,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
     <script src="https://js.arcgis.com/3.19/"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/dijit/themes/claro/claro.css">
     <title></title>
   </head>
+  <body>
+    require(["esri/map", "dojo/domReady!"], function(Map) {
+  var map = new Map("map", {
+    center: [-118, 34.5],
+    zoom: 8,
+    basemap: "topo"
+  });
+});
+    </body>
 </html>
