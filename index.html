@@ -16,7 +16,18 @@
     
     <script>var dojoConfig = { parseOnLoad:true };</script>
     <script src="https://js.arcgis.com/3.19compact/"></script>
-    <script>  var map;  require(["esri/map", "dojo/domReady!"], function(Map){  });</script>
+    <script>  var map;
+      require(["esri/map", "dojo/domReady!"], function(Map){  });
+      require([
+        "esri/map",
+        "esri/arcgis/utils",
+        "dojo/domReady!"
+      ], function(Map, arcgisUtils){
+        arcgisUtils.createMap(f8f6709a3223467fabc6714d27dfd120, "mapDiv").then(function (response) {
+          map = response.map;
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="mapDiv"></div>
