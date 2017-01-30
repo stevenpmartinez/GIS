@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Create a Web Map</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.19/esri/css/esri.css">
-    <style>
-      html,body,#mapDiv,.map.container{
-        padding:0;
-        margin:0;
-        height:100%;
-      }
-    </style>
-    
-    <script>var dojoConfig = { parseOnLoad:true };</script>
-    <script src="https://js.arcgis.com/3.19compact/"></script>
-    <script>  var map;
-      require(["esri/map", "dojo/domReady!"], function(Map){  });
-      require([
-        "esri/map",
-        "esri/arcgis/utils",
-        "dojo/domReady!"
-      ], function(Map, arcgisUtils){
-        arcgisUtils.createMap(f8f6709a3223467fabc6714d27dfd120, "mapDiv").then(function (response) {
-          map = response.map;
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <div id="mapDiv"></div>
-  </body>
+<head>
+    <title>Leaflet Map</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+   <div id="map" style="width: 705px; height: 375px"></div>
+  
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script>
+    // Create variable to hold map element, give initial settings to map
+    var map = L.map('map',{ center: [42.362432, -71.086086], zoom: 14});
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+  </script>
+</body>
 </html>
