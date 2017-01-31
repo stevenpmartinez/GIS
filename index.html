@@ -26,18 +26,18 @@
 			{color: 'red', weight: 10}).addTo(map);
 
 		// Create area feature for MIT, style and add to map
-		var myArea = L.polygon([[33.353770, -118.103606], [33.355447, -118.104475],
-		    [33.362681, -118.089830], [33.361829, -118.079230]], 
+		var myArea = L.polygon([[34.353770, -118.103606], [33.355447, -119.104475],
+		    [34.362681, -118.089830], [33.361829, -119.079230]], 
 		    {color: 'blue', weight: 4}).addTo(map);
 
         // Bind popup to data point object
-        myDataPoint.bindPopup("<h3>Kendall Square</h3><p>Cambridge, MA<br>Information about Kendall Square.</p>");
+        myDataPoint.bindPopup("<h3>Long Beach</h3><p>Long Beach, CA<br>Great City within Los Angeles County.</p>");
         
         // Bind popup to line object
-        myDataLine.bindPopup("Mass Ave Bridge");
+        myDataLine.bindPopup("Line");
         
         // Bind popup to area object
-        myArea.bindPopup("MIT Campus");
+        myArea.bindPopup("Service Area");
 
         // Create an Empty Popup
         var popup = L.popup();
