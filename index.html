@@ -19,15 +19,15 @@
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 
 		// Create point feature for Kendall Square T Station
-		var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
+		var myDataPoint = L.marker([33.772432, -118.186086]).addTo(map);
 
 		// Create line feature for Mass Ave Bridge, style and add to map
-		var myDataLine = L.polyline([[42.357227, -71.092631], [42.351411, -71.089723]],
+		var myDataLine = L.polyline([[33.777227, -118.182631], [33.771411, -118.199723]],
 			{color: 'red', weight: 10}).addTo(map);
 
 		// Create area feature for MIT, style and add to map
-		var myArea = L.polygon([[42.353770, -71.103606], [42.355447, -71.104475],
-		    [42.362681, -71.089830], [42.361829, -71.079230]], 
+		var myArea = L.polygon([[33.353770, -118.103606], [33.355447, -118.104475],
+		    [33.362681, -118.089830], [33.361829, -118.079230]], 
 		    {color: 'blue', weight: 4}).addTo(map);
 
         // Bind popup to data point object
