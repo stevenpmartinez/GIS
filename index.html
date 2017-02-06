@@ -54,7 +54,7 @@
         map.on('click', onMapClick);
 
         // load GeoJSON from an external file
-		$.getJSON("Routes.geojson",function(data){
+		$.getJSON("Points.geojson",function(data){
 		    // add GeoJSON layer to the map once the file is loaded
 		    L.geoJson(data,{
 				onEachFeature: function (feature, layer) {
