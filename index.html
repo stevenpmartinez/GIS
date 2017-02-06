@@ -13,7 +13,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>
     	// Create variable to hold map element, give initial settings to map
-    	var map = L.map('map',{ center: [33.7701, -118.1937], zoom: 10});
+    	var map = L.map('map',{ center: [33.7701, -118.1937], zoom: 12});
 
     	// Add OpenStreetMap tile layer to map element
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
@@ -26,9 +26,9 @@
 			{color: 'red', weight: 10}).addTo(map);
 
 		// Create area feature for Service Area, style and add to map
-		var myArea = L.polygon([[33.748679, -118.214156], [33.735235, -118.099542],
-		    [33.914871, -118.097521], [33.913194, -118.182110]], 
-		    {color: 'blue', weight: 4}).addTo(map);
+		//var myArea = L.polygon([[33.748679, -118.214156], [33.735235, -118.099542],
+		  //  [33.914871, -118.097521], [33.913194, -118.182110]], 
+		    //{color: 'blue', weight: 4}).addTo(map);
 
         // Bind popup to data point object
         myDataPoint.bindPopup("<h3>Long Beach</h3><p>Long Beach, CA<br>Great City within Los Angeles County.</p>");
@@ -59,6 +59,15 @@
 		    L.geoJson(data,{
 				onEachFeature: function (feature, layer) {
 					layer.bindPopup(feature.properties.Rt);
+				}
+			}).addTo(map);
+			
+	// load GeoJSON from an external file
+		$.getJSON("Points.geojson",function(data){
+		    // add GeoJSON layer to the map once the file is loaded
+		    L.geoJson(data,{
+				onEachFeature: function (feature, layer) {
+					layer.bindPopup(feature.properties.Descriptio);
 				}
 			}).addTo(map);
 
