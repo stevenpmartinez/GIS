@@ -58,11 +58,9 @@
 		    // add GeoJSON layer to the map once the file is loaded
 		    L.geoJson(data,{
 				onEachFeature: function (feature, layer) {
-					layer.bindPopup(feature.properties.Rt);
+					layer.bindPopup(feature.properties.Descriptio);
 				}
 			}).addTo(map);
-			
-
 		});
 	</script>
 </body>
